@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 use App\Http\Controllers\FornecedorController;
+use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\MarcaController;
 
 
 
@@ -10,11 +12,9 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::get('/fornecedor', function () {
-    return view('fornecedor.index');
-})->name('fornecedor.index');
-
 Route::resource('fornecedor', FornecedorController::class);
+Route::resource('categorias', CategoriaController::class);
+Route::resource('marcas', MarcaController::class);
 
 
 Route::view('dashboard', 'dashboard')

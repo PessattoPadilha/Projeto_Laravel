@@ -33,8 +33,8 @@
                 <tr>
                     <td>{{ $fornecedor->id }}</td>
                     <td>{{ $fornecedor->nome }}</td>
-                    <td>{{ $fornecedor->email }}</td>
-                    <td>{{ $fornecedor->telefone }}</td>
+                    <td>{{ $fornecedor->cnpj  }}</td>
+                    <td>{{ $fornecedor->contato  }}</td>
                     <td>
                         <a href="{{ route('fornecedor.show', $fornecedor->id) }}" class="btn btn-sm btn-info">Ver</a>
                         <a href="{{ route('fornecedor.edit', $fornecedor->id) }}" class="btn btn-sm btn-warning">Editar</a>
