@@ -38,7 +38,7 @@
                     <td>
                         <a href="{{ route('fornecedores.show', $fornecedor->id) }}" class="btn btn-sm btn-info">Ver</a>
                         <a href="{{ route('fornecedores.edit', $fornecedor->id) }}" class="btn btn-sm btn-warning">Editar</a>
-                        <form action="{{ route('fornecedor.destroy', $fornecedor->id) }}" method="POST" style="display:inline;">
+                        <form action="{{ route('fornecedores.destroy', $fornecedor->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Tem certeza?')">Deletar</button>

@@ -10,7 +10,7 @@
             <p class="text-muted small mb-0">Atualize as informações do fornecedor <strong>{{ $fornecedor->nome }}</strong>.</p>
         </div>
         <div class="col-md-6 text-md-end text-start mt-3 mt-md-0">
-            <a href="{{ route('fornecedor.index') }}" class="btn btn-outline-secondary btn-sm text-white">
+            <a href="{{ route('fornecedores.index') }}" class="btn btn-outline-secondary btn-sm text-white">
                 <i class="fa-solid fa-arrow-left me-1"></i> Voltar para a Lista
             </a>
         </div>
@@ -21,14 +21,13 @@
             <div class="card shadow-lg border-0" style="background-color: var(--bg-card); border-top: 3px solid var(--amarelo-geek) !important;">
                 <div class="card-body p-4 p-md-5">
                     
-                    <form action="{{ route('fornecedor.update', $fornecedor->id) }}" method="POST">
+                    <form action="{{ route('fornecedores.update', $fornecedor->id) }}" method="POST">
                         @csrf
                         @method('PUT')
 
-                        @include('fornecedor._form')
-
+                        @include('fornecedores._form')
                         <div class="text-end">
-                            <a href="{{ route('fornecedor.index') }}" class="btn btn-link text-white-50 text-decoration-none me-3">
+                            <a href="{{ route('fornecedores.index') }}" class="btn btn-link text-white-50 text-decoration-none me-3">
                                 Cancelar
                             </a>
                             <button type="submit" class="btn btn-geek px-4 py-2">
