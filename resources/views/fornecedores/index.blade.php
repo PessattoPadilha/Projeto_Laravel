@@ -7,7 +7,7 @@
             <h1>Fornecedores</h1>
         </div>
         <div class="col-md-6 text-end">
-            <a href="{{ route('fornecedor.create') }}" class="btn btn-primary">
+            <a href="{{ route('fornecedores.create') }}" class="btn btn-primary">
                 + Novo Fornecedor
             </a>
         </div>
@@ -36,8 +36,8 @@
                     <td>{{ $fornecedor->cnpj  }}</td>
                     <td>{{ $fornecedor->contato  }}</td>
                     <td>
-                        <a href="{{ route('fornecedor.show', $fornecedor->id) }}" class="btn btn-sm btn-info">Ver</a>
-                        <a href="{{ route('fornecedor.edit', $fornecedor->id) }}" class="btn btn-sm btn-warning">Editar</a>
+                        <a href="{{ route('fornecedores.show', $fornecedor->id) }}" class="btn btn-sm btn-info">Ver</a>
+                        <a href="{{ route('fornecedores.edit', $fornecedor->id) }}" class="btn btn-sm btn-warning">Editar</a>
                         <form action="{{ route('fornecedor.destroy', $fornecedor->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')

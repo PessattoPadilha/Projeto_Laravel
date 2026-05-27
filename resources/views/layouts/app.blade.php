@@ -121,10 +121,13 @@
                             <a class="nav-link active" href="#"><i class="fa-solid fa-truck-field me-1"></i> Fornecedores</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-boxes-stacked me-1"></i> Produtos</a>
+                            <a class="nav-link" href="#"><i class="fa-solid fa-rectangle-list me-1"></i> Marcas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-users me-1"></i> Clientes</a>
+                            <a class="nav-link" href="#"><i class="fa-solid fa-tags me-1"></i> Categorias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-boxes-stacked me-1"></i> Produtos</a>
                         </li>
                     </ul>
                 </div>
@@ -143,7 +146,7 @@
                     <span>&copy; {{ date('Y') }} GeekStore Dashboard. Todos os direitos reservados.</span>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <small>Desenvolvido com <i class="fa-solid fa-heart text-danger"></i> para o próximo nível.</small>
+                    <small>Desenvolvido  <i class="fa-solid fa-gamepad text-danger"></i> para o próximo nível.</small>
                 </div>
             </div>
         </div>

@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\fornecedor;
+use App\Models\fornecedores;
 
-class FornecedorController extends Controller
+class FornecedoresController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $fornecedores = Fornecedor::all();
-        return view('fornecedor.index', compact('fornecedores'));
+        $fornecedores = fornecedores::all();
+        return view('fornecedores.index', compact('fornecedores'));
     }
 
     /**
@@ -21,7 +21,7 @@ class FornecedorController extends Controller
      */
     public function create()
     {
-        return view('fornecedor.create');
+        return view('fornecedores.create');
     }
 
     /**
@@ -35,7 +35,7 @@ class FornecedorController extends Controller
         $fornecedor->contato = $request->input('contato');
         $fornecedor->save();
 
-        return redirect()->route('fornecedor.index');
+        return redirect()->route('fornecedores.index');
     }
 
     /**
@@ -50,8 +50,8 @@ class FornecedorController extends Controller
      */
     public function edit(string $id)
     {
-        $fornecedor = Fornecedor::findOrFail($id);
-        return view('fornecedor.edit', compact('fornecedor'));
+        $fornecedor = fornecedores::findOrFail($id);
+        return view('fornecedores.edit', compact('fornecedor'));
     }
 
     /**
@@ -59,13 +59,13 @@ class FornecedorController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $fornecedor = Fornecedor::findOrFail($id);
+        $fornecedor = fornecedores::findOrFail($id);
         $fornecedor->nome = $request->input('nome');
         $fornecedor->cnpj = $request->input('cnpj');
         $fornecedor->contato = $request->input('contato');
         $fornecedor->save();
 
-        return redirect()->route('fornecedor.index');
+        return redirect()->route('fornecedores.index');
     }
 
     /**
@@ -73,9 +73,9 @@ class FornecedorController extends Controller
      */
     public function destroy(string $id)
     {
-        $fornecedor = Fornecedor::findOrFail($id);
+        $fornecedor = fornecedores::findOrFail($id);
         $fornecedor->delete();
 
-        return redirect()->route('fornecedor.index');
+        return redirect()->route('fornecedores.index');
     }
 }
