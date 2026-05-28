@@ -5,7 +5,7 @@ use Livewire\Volt\Volt;
 use App\Http\Controllers\FornecedoresController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ProdutosController;
-use App\Http\Controllers\MarcaController;
+use App\Http\Controllers\MarcasController;
 
 
 
