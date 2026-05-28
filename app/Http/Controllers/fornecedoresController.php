@@ -29,11 +29,11 @@ class FornecedoresController extends Controller
      */
     public function store(Request $request)
     {
-        $fornecedor = new Fornecedor();
-        $fornecedor->nome = $request->input('nome');
-        $fornecedor->cnpj = $request->input('cnpj');
-        $fornecedor->contato = $request->input('contato');
-        $fornecedor->save();
+        $fornecedores = new Fornecedores();
+        $fornecedores->nome = $request->input('nome');
+        $fornecedores->cnpj = $request->input('cnpj');
+        $fornecedores->contato = $request->input('contato');
+        $fornecedores->save();
 
         return redirect()->route('fornecedores.index');
     }
@@ -43,6 +43,8 @@ class FornecedoresController extends Controller
      */
     public function show(string $id)
     {
+        $fornecedor = fornecedores::findOrFail($id);
+        return view('fornecedores.show', compact('fornecedor'));
     }
 
     /**
