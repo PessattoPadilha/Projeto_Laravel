@@ -2,16 +2,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Produto;
+use App\Models\Produtos;
 
-class ProdutoController extends Controller
+class ProdutosController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $produtos = Produto::all();
+        $produtos = Produtos::all();
         return view('produtos.index', compact('produtos'));
     }
 
@@ -28,7 +28,7 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
-        $produto = new Produto();
+        $produto = new Produtos();
         $produto->nome = $request->input('nome');
         $produto->preco = $request->input('preco');
         $produto->save();
@@ -41,8 +41,8 @@ class ProdutoController extends Controller
      */
     public function show(string $id)
     {
-        $produto = Produto::findOrFail($id);
-        return view('produtos.show', compact('produto'));
+        $produto = Produtos::findOrFail($id);
+        return view('produtos.show', compact('produtos'));
     }
 
     /**
@@ -50,8 +50,8 @@ class ProdutoController extends Controller
      */
     public function edit(string $id)
     {
-        $produto = Produto::findOrFail($id);
-        return view('produtos.edit', compact('produto'));
+        $produto = Produtos::findOrFail($id);
+        return view('produtos.edit', compact('produtos'));
     }
 
     /**
@@ -59,7 +59,7 @@ class ProdutoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $produto = Produto::findOrFail($id);
+        $produto = Produtos::findOrFail($id);
         $produto->nome = $request->input('nome');
         $produto->preco = $request->input('preco');
         $produto->save();
@@ -72,7 +72,7 @@ class ProdutoController extends Controller
      */
     public function destroy(string $id)
     {
-        $produto = Produto::findOrFail($id);
+        $produto = Produtos::findOrFail($id);
         $produto->delete();
 
         return redirect()->route('produtos.index');

@@ -109,30 +109,42 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-geek navbar-dark shadow">
             <div class="container">
-                <a class="navbar-brand" href="#">
-                    <i class="fa-solid fa-gamepad me-2"></i>GEEK<span class="text-white">STORE</span>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-link">
-                            <a class="nav-link active" href="#"><i class="fa-solid fa-truck-field me-1"></i> Fornecedores</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-rectangle-list me-1"></i> Marcas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-tags me-1"></i> Categorias</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa-solid fa-boxes-stacked me-1"></i> Produtos</a>
-                        </li>
-                    </ul>
-                </div>
+            <a class="navbar-brand" href="#">
+                <i class="fa-solid fa-gamepad me-2"></i>GEEK<span class="text-white">STORE</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->is('fornecedores') ? 'active' : '' }}" href="{{ route('fornecedores.index') }}"><i class="fa-solid fa-truck-field me-1"></i> Fornecedores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->is('marcas') ? 'active' : '' }}" href="{{ route('marcas.index') }}"><i class="fa-solid fa-rectangle-list me-1"></i> Marcas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->is('categorias') ? 'active' : '' }}" href="{{ route('categorias.index') }}"><i class="fa-solid fa-tags me-1"></i> Categorias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->is('produtos') ? 'active' : '' }}" href="{{ route('produtos.index') }}"><i class="fa-solid fa-boxes-stacked me-1"></i> Produtos</a>
+                </li>
+                </ul>  
+            </div>
             </div>
         </nav>
+
+        <style>
+            .nav-link.active::after {
+            content: '';
+            display: block;
+            height: 2px;
+            background-color: var(--amarelo-geek);
+            margin-top: 5px; /* Ajuste a distância conforme necessário */
+            transition: width 0.3s;
+            width: 100%;
+            }
+        </style>
     </header>
 
     <main class="py-5">

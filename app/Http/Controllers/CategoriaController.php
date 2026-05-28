@@ -11,17 +11,18 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        $categorias = Categoria::all();
+        $categorias = Categoria::paginate(15);
         return view('categorias.index', compact('categorias'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
-    
-    }
+    public function create(Request $request)
+     {
+        return view('categorias.create');
+     }
+
 
     /**
      * Store a newly created resource in storage.

@@ -29,7 +29,7 @@
                     <th>Ações</th>
                 </tr>
             </thead>
-            <tbody>
+                        <tbody>
                 @forelse ($categorias as $categoria)
                     <tr>
                         <td>{{ $categoria->id }}</td>
