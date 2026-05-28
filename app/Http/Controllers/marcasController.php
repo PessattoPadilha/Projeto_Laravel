@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\marcas;
 use Illuminate\Http\Request;
 
-class MarcaController extends Controller
+class MarcasController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $marcas = marcas::all();
+        return view('marcas.index', compact('marcas'));
     }
 
     /**
@@ -19,7 +21,7 @@ class MarcaController extends Controller
      */
     public function create()
     {
-        //
+        return view('marcas.create');
     }
 
     /**
@@ -27,7 +29,12 @@ class MarcaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $marca = new marcas();
+        $marca->nome = $request->input('nome');
+        $marca->Origem = $request->input('Origem');
+        $marca->save();
+
+        return redirect()->route('marcas.index');
     }
 
     /**
@@ -43,7 +50,9 @@ class MarcaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $marca = marcas::findOrFail($id);
+        return view('marcas.edit', compact('marca'));
+
     }
 
     /**
@@ -51,7 +60,12 @@ class MarcaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $marca = marcas::findOrFail($id);
+        $marca->nome = $request->input('nome');
+        $marca->Origem = $request->input('Origem');
+        $marca->save();
+
+        return redirect()->route('marcas.index');
     }
 
     /**
@@ -59,6 +73,9 @@ class MarcaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $marca = marcas::findOrFail($id);
+        $marca->delete();
+
+        return redirect()->route('marcas.index');
     }
 }

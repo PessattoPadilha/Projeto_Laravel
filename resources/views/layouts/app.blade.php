@@ -78,8 +78,11 @@
             --bs-table-bg: #0b0b0c;
             color: var(--amarelo-geek) !important;
         }
+        .table-striped tbody tr {
+            background-color: #0b0b0c !important;
+        }
         .table-striped tbody tr:nth-of-type(odd) {
-            --bs-table-accent-bg: rgba(255, 255, 255, 0.03);
+            background-color: #0b0b0c !important;
             color: var(--texto-claro);
         }
         .table td, .table th {
