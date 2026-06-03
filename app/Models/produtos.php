@@ -12,25 +12,25 @@ class Produtos extends Model
         'nome',
         'descricao',
         'preco',
-        'quantidade',
-        'categoria_id',
-        'marca_id',
-        'fornecedor_id',
+        'estoque',
+        'id_fornecedores',
+        'id_marcas',
+        'id_categorias',
     ];
 
     public function categoria()
     {
-        return $this->belongsTo(Categoria::class);
+        return $this->belongsTo(categoria::class, 'id_categorias');
     }
 
     public function marca()
     {
-        return $this->belongsTo(Marca::class);
+        return $this->belongsTo(marcas::class, 'id_marcas');
     }
 
     public function fornecedor()
     {
-        return $this->belongsTo(Fornecedores::class);
+        return $this->belongsTo(fornecedores::class, 'id_fornecedores');
     }
 
 
