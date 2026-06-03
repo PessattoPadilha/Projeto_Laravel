@@ -22,7 +22,7 @@ Status: Em desenvolvimento
  Instalação
     1. Clone o repositório:
         git clone <https://github.com/PessattoPadilha/Projeto_Laravel.git>
-        cd projeto
+        cd nome projeto
 
     2. Instale dependências PHP e JS:
         composer install
