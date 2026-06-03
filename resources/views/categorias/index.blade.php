@@ -7,8 +7,8 @@
             <h1>Categorias</h1>
         </div>
         <div class="col-md-6 text-end">
-            <a href="{{ route('categorias.create') }}" class="btn btn-primary">
-                Nova Categoria
+            <a href="{{ route('categorias.create') }}" class="btn btn-geek btn-sm">
+                <i class="fa-solid fa-plus me-1"></i>Nova Categoria
             </a>
         </div>
     </div>

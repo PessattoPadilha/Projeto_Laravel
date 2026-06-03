@@ -7,6 +7,6 @@
 
     <form action="{{ route('categorias.update', $categoria) }}" method="POST">
         @method('PUT')
-        @include('categorias._forms', ['buttonText' => 'Salvar alteracoes'])
+        @include('categorias.forms', ['buttonText' => 'Salvar alteracoes'])
     </form>
 @endsection
