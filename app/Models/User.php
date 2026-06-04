@@ -22,6 +22,8 @@ class User extends Authenticatable // implements MustVerifyEmail
         'name',
         'email',
         'password',
+        'dashboard_note_task',
+        'dashboard_note_general',
     ];
 
     /**
