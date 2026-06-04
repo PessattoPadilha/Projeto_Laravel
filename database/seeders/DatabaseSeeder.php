@@ -10,6 +10,8 @@ use App\Models\Produtos;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+// seeder serve para popular o banco de dados com dados iniciais, como categorias, marcas, fornecedores e produtos, facilitando o desenvolvimento e testes da aplicação.
+//php artisan migrate:fresh --seed - para rodar as migrations e os seeders juntos, limpando o banco de dados e populando com os dados definidos nos seeders.
 class DatabaseSeeder extends Seeder
 {
     /**
