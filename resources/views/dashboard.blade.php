@@ -56,6 +56,7 @@
                         <div class="rounded-2xl border border-slate-200 bg-white p-4 text-sm text-slate-700 shadow-sm dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
                             <div class="font-semibold text-slate-900 dark:text-slate-100">{{ $produto->nome }}</div>
                             <div class="mt-1 text-xs uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">{{ $produto->categoria?->nome ?? 'Categoria não definida' }}</div>
+                            <div class="mt-2 text-xs text-slate-500 dark:text-slate-400">Criado em: {{ $produto->created_at->timezone(config('app.timezone'))->format('d/m/Y H:i') }}</div>
                         </div>
                     @endforeach
                 </div>
