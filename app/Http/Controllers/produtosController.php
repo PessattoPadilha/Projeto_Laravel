@@ -9,18 +9,14 @@ use App\Models\marcas;
 
 class ProdutosController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
         $produtos = Produtos::all();
         return view('produtos.index', compact('produtos'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create()
     {
         $marcas = marcas::orderBy('nome')->get();
@@ -30,9 +26,7 @@ class ProdutosController extends Controller
         return view('produtos.create', compact('marcas', 'fornecedores', 'categorias'))->with('produto', null);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(Request $request)
     {
         $data = $request->validate([
@@ -58,18 +52,14 @@ class ProdutosController extends Controller
         return redirect()->route('produtos.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
+  
     public function show(string $id)
     {
         $produto = Produtos::findOrFail($id);
         return view('produtos.show', compact('produto'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+
     public function edit(string $id)
     {
         $produto = Produtos::findOrFail($id);
@@ -79,9 +69,7 @@ class ProdutosController extends Controller
         return view('produtos.edit', compact('produto', 'marcas', 'fornecedores', 'categorias'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+
     public function update(Request $request, string $id)
     {
         $data = $request->validate([
@@ -107,9 +95,7 @@ class ProdutosController extends Controller
         return redirect()->route('produtos.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    
     public function destroy(string $id)
     {
         $produto = Produtos::findOrFail($id);

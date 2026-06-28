@@ -12,7 +12,9 @@ use App\Models\Produtos;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return auth()->check()
+        ? redirect()->route('dashboard')
+        : redirect()->route('login');
 })->name('home');
 
 
@@ -40,8 +42,6 @@ Route::post('dashboard/notes', function (Request $request) {
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
-
-
     Route::resource('fornecedores', FornecedoresController::class);
     Route::resource('categorias', CategoriaController::class);
     Route::resource('marcas', MarcasController::class);

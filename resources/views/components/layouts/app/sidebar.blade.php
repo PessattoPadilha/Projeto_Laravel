@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         @include('partials.head')
     </head>
@@ -24,12 +24,12 @@
             <flux:spacer />
 
             <flux:navlist variant="outline">
-                <flux:navlist.item icon="folder-git-2" href="https://github.com/laravel/livewire-starter-kit" target="_blank">
-                    Repository
+                <flux:navlist.item icon="folder-git-2" href="https://github.com/PessattoPadilha/Projeto_Laravel" target="_blank">
+                    Repositório
                 </flux:navlist.item>
 
                 <flux:navlist.item icon="book-open-text" href="https://laravel.com/docs/starter-kits" target="_blank">
-                    Documentation
+                    Documentação
                 </flux:navlist.item>
             </flux:navlist>
 
@@ -64,7 +64,7 @@
                     <flux:menu.separator />
 
                     <flux:menu.radio.group>
-                        <flux:menu.item href="{{ route('settings.profile') }}" icon="cog">Settings</flux:menu.item>
+                        <flux:menu.item href="{{ route('settings.appearance') }}" icon="cog">Settings</flux:menu.item>
                     </flux:menu.radio.group>
 
                     <flux:menu.separator />
@@ -114,7 +114,7 @@
                     <flux:menu.separator />
 
                     <flux:menu.radio.group>
-                        <flux:menu.item href="{{ route('settings.profile') }}" icon="cog">Settings</flux:menu.item>
+                        <flux:menu.item href="{{ route('settings.appearance') }}" icon="cog">Settings</flux:menu.item>
                     </flux:menu.radio.group>
 
                     <flux:menu.separator />
