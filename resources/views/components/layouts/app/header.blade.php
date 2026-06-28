@@ -73,7 +73,7 @@
                     <flux:menu.separator />
 
                     <flux:menu.radio.group>
-                        <flux:menu.item href="/settings/profile" icon="cog">Settings</flux:menu.item>
+                        <flux:menu.item href="{{ route('settings.profile') }}" icon="cog">Settings</flux:menu.item>
                     </flux:menu.radio.group>
 
                     <flux:menu.separator />
