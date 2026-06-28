@@ -7,6 +7,9 @@
             <h1>Categorias</h1>
         </div>
         <div class="col-md-6 text-end">
+            <a href="{{ route('dashboard') }}" class="btn btn-secondary btn-sm me-2">
+                <i class="fa-solid fa-arrow-left me-1"></i>Voltar ao Dashboard
+            </a>
             <a href="{{ route('categorias.create') }}" class="btn btn-geek btn-sm">
                 <i class="fa-solid fa-plus me-1"></i>Nova Categoria
             </a>
